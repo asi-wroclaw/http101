@@ -1,4 +1,4 @@
-# Git 101
+# HTTP 101
 
 This repository contains materials used for HTTP 101 talk
 
