@@ -1,4 +1,4 @@
-% How do I into the Internet?
+% HTTP 101
 % Michał Zając
 
 # HTTP
@@ -17,7 +17,7 @@ Released in 1996
 
 ## HTTP 1.1
 
-Officially released in 1997
+Officially released in 1997, updated in 1999 and again in 2014
 
 ## HTTP 2.0
 
@@ -27,51 +27,97 @@ Officially released in 2015
 
 ## Client-server
 
-![Client sending a request to the server](images/client-server.svg){.stretch}\ 
+![Client sending a request to the server](images/client-server.svg)\ 
 
-## Client
+# Request
 
-Client... requests things?
+## Syntax
 
-## Server
+```
+<HTTP verb> <URI> <HTTP version>
+[Headers]
 
-Server provides those things
+<Body>
+```
 
-# Requests
+## Request example
+
+```
+POST / HTTP/1.1
+Accept: application/json, */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 17
+Content-Type: application/json
+Host: www.google.pl
+User-Agent: HTTPie/0.9.9
+
+{
+    "field": "test"
+}
+```
+
+## Headers
+
+## Body
+
+# Types of requests
 
 ## GET
 
-Give me a webpage.
+Used mostly for fetching resources
 
 ## HEAD
 
-Give me a webpage but without the webpage.
-
-This request should not have a body.
+Same as GET but the response MUST NOT contain a body
 
 ## POST
 
-I'm sending you some data mate.
+Requests that the target resource processes the representation sent in the body
 
 ## PUT
 
-Replace that with this.
+Replace target resource with the one attached in the request's body
 
 ## PATCH
 
-Here are some small changes, apply them.
+Partial modifications to target resource
 
 ## DELETE
 
-Remove speaker from the premises.
-
-This request should not have a body.
+Remove target resource
 
 ## Others
 
 TRACE, OPTIONS, CONNECT
 
-# Responses
+# Response
+
+## Syntax
+
+```
+<HTTP version> <HTTP status code>
+[Headers]
+
+<Body>
+```
+
+## Response example
+
+```
+HTTP/1.1 200 OK
+Alt-Svc: quic=":443"; ma=2592000; v="44,43,39,35"
+Cache-Control: private, max-age=0
+Content-Encoding: gzip
+Content-Type: text/html; charset=ISO-8859-2
+Date: Tue, 18 Dec 2018 23:07:14 GMT
+Expires: -1
+Server: gws
+Set-Cookie: 1P_JAR=2018-12-18-23; expires=Thu, 17-Jan-2019 23:07:14 GMT; path=/; domain=.google.pl
+Transfer-Encoding: chunked
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+```
 
 ## 1xx status codes
 
@@ -105,59 +151,6 @@ ex. 500 Internal Server Error
 
 This code should be returned by teapots requested to brew coffee.
 
-# Example HTTP session
-
-## Request
-
-```
-GET /index.html HTTP/1.1
-Host: www.example.com
-```
-
-## Response
-
-```
-HTTP/1.1 200 OK
-Date: Mon, 23 May 2005 22:38:34 GMT
-Content-Type: text/html; charset=UTF-8
-Content-Encoding: UTF-8
-Content-Length: 138
-Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT
-Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)
-ETag: "3f80f-1b6-3e1cb03b"
-Accept-Ranges: bytes
-Connection: close
-
-<html>
-<head>
-  <title>An Example Page</title>
-</head>
-<body>
-  Hello World, this is a very simple HTML document.
-</body>
-</html>
-```
-
-# Security
-
-## HTTP
-
-HTTP ALONE IS NOT SECURE, USING HTTP IN 2017 SHOULD BE FORBIDDEN 
-
-## HTTPS
-
-HTTP within a connection encryped by Transport Layer Security
-
-# REST
-
-## What is REST?
-
-REpresentational State Trasfer is a way of providing interoperability between computer systems on the Internet.
-
-## In simpler terms
-
-![Relationship between URL and HTTP methods](images/rest.png){.stretch}\ 
-
 # Questions?
 
 # Further reading
@@ -166,10 +159,8 @@ REpresentational State Trasfer is a way of providing interoperability between co
 
 #. [Wikipedia: HTTP](https://www.wikiwand.com/en/Hypertext_Transfer_Protocol)
 #. [Wikipedia: List of HTTP status codes](https://www.wikiwand.com/en/List_of_HTTP_status_codes)
-#. [IEFT: RFC7231](https://tools.ietf.org/html/rfc7231)
 #. [Wikipedia: HTTPS](https://www.wikiwand.com/en/HTTPS)
-#. [Wikipedia: Transport Layer Security](https://www.wikiwand.com/en/Transport_Layer_Security)
-#. [REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
-#. [Wikipedia: Representational state transfer](https://www.wikiwand.com/en/Representational_state_transfer)
+#. [IEFT: RFC7231](https://tools.ietf.org/html/rfc7231)
+#. [IEFT: RFC7231](https://tools.ietf.org/html/rfc5789)
 
 # Thanks!

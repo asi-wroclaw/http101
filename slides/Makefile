@@ -7,7 +7,6 @@ slides:
 		-V controls=false \
 		-V slideNumber="'c/t'" \
 		--standalone
-	ruby fix_images.rb
 
 .ONESHELL:
 release: slides.md slides
