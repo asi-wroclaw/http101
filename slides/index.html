@@ -148,6 +148,40 @@ X-XSS-Protection: 1; mode=block</code></pre>
 <h2>418 I’m a teapot</h2>
 <p>This code should be returned by teapots requested to brew coffee.</p>
 </section></section>
+<section><section id="https" class="title-slide slide level1"><h1>HTTPS</h1></section><section id="should-i-use-https" class="slide level2">
+<h2>Should I use HTTPS?</h2>
+<p>Yes, it’s 2019. There’s no reason to use plain HTTP anymore.</p>
+</section><section id="why" class="slide level2">
+<h2>Why?</h2>
+<ol type="1">
+<li>Prevents anyone from tampering with the website you are visiting</li>
+<li>Prevents anyone from even knowing which page are you visiting</li>
+<li>Prevents anyone from getting you credit card information</li>
+<li>Generally prevents anyone from doing anything nasty with your traffic</li>
+</ol>
+</section><section id="overview-of-https-connection" class="slide level2">
+<h2>Overview of HTTPS connection</h2>
+<ol type="1">
+<li>TLS operates on TCP, which means that under TLS layer the HTTP remains unchanged</li>
+<li>After establishing a TCP connection a TLS handshake takes place</li>
+<li>Server sends it’s certificate to the client</li>
+</ol>
+<aside data-markdown class="notes">
+<p>A handshake establishes the following:</p>
+<ol type="1">
+<li>Which version of TLS should be used</li>
+<li>Which ciphersuites should be used</li>
+<li>What compression methods should be used</li>
+</ol>
+</aside>
+</section><section id="overview-of-https-connection-1" class="slide level2">
+<h2>Overview of HTTPS connection</h2>
+<ol start="4" type="1">
+<li>A key is exchanged between the server and the client</li>
+<li>A key for symmetric encryption is computed</li>
+<li>Further communication is encrypted</li>
+</ol>
+</section></section>
 <section><section id="questions" class="title-slide slide level1"><h1>Questions?</h1></section></section>
 <section><section id="further-reading" class="title-slide slide level1"><h1>Further reading</h1></section><section id="section" class="slide level2">
 <h2></h2>

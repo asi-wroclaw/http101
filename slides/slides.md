@@ -151,6 +151,39 @@ ex. 500 Internal Server Error
 
 This code should be returned by teapots requested to brew coffee.
 
+# HTTPS
+
+## Should I use HTTPS?
+
+Yes, it's 2019. There's no reason to use plain HTTP anymore.
+
+## Why?
+
+1. Prevents anyone from tampering with the website you are visiting
+2. Prevents anyone from even knowing which page are you visiting
+3. Prevents anyone from getting you credit card information
+4. Generally prevents anyone from doing anything nasty with your traffic
+
+## Overview of HTTPS connection
+
+1. TLS operates on TCP, which means that under TLS layer the HTTP remains unchanged
+2. After establishing a TCP connection a TLS handshake takes place
+3. Server sends it's certificate to the client
+
+<aside data-markdown class="notes">
+A handshake establishes the following:
+
+1. Which version of TLS should be used
+2. Which ciphersuites should be used
+3. What compression methods should be used
+</aside>
+
+## Overview of HTTPS connection
+
+4. A key is exchanged between the server and the client
+5. A key for symmetric encryption is computed
+6. Further communication is encrypted
+
 # Questions?
 
 # Further reading
